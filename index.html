@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>☾ Céu de Palavras ✦</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --fundo: #fbfaff;
+    --texto: #302b60;
+    --roxo: #8874d0;
+    --cartao: #ffffff;
+    --borda: #eee9fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background:
+        radial-gradient(ellipse at 80% 5%, #e4e0ff, transparent 35%),
+        radial-gradient(ellipse at 10% 20%, #ffe8f1, transparent 35%),
+        var(--fundo);
+    color: var(--texto);
+    transition: background .3s, color .3s;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+button,
+a,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 3px solid #8d7be0;
+    outline-offset: 3px;
+}
+
+.topbar {
+    max-width: 1180px;
+    margin: auto;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--roxo);
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+nav a:hover {
+    color: var(--roxo);
+}
+
+.theme-button {
+    border: 1px solid var(--borda);
+    background: var(--cartao);
+    color: var(--texto);
+    border-radius: 13px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.hero {
+    max-width: 1180px;
+    min-height: 400px;
+    margin: auto;
+    padding: 45px 28px 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--roxo);
+}
+
+h1 {
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 15px 0;
+}
+
+h1 span {
+    color: var(--roxo);
+}
+
+.hero-text p,
+.hero-text>p:not(.eyebrow) {
+    max-width: 440px;
+    line-height: 1.9;
+    color: #777393;
+}
+
+.main-button {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    background: #302b60;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 900;
+    box-shadow: 0 10px 25px #302b6030;
+    transition: transform .2s;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+}
+
+.sky-art {
+    min-height: 280px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.moon {
+    font-size: 150px;
+    color: #edc7e0;
+    text-shadow: 0 10px 35px #b9a4e680;
+    transform: rotate(-15deg);
+    animation: float 5s ease-in-out infinite;
+}
+
+.star {
+    position: absolute;
+    color: #9586db;
+    animation: twinkle 3s infinite;
+}
+
+.star1 {
+    top: 12%;
+    left: 20%;
+    font-size: 30px;
+}
+
+.star2 {
+    top: 18%;
+    right: 18%;
+    font-size: 35px;
+    animation-delay: .8s;
+}
+
+.star3 {
+    bottom: 17%;
+    left: 26%;
+    font-size: 30px;
+    animation-delay: 1.5s;
+}
+
+.star4 {
+    bottom: 22%;
+    right: 23%;
+    font-size: 22px;
+}
+
+.cloud {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    font-size: 65px;
+    color: #c4b9ed;
+}
+
+.planet {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color: #e7a8c7;
+    font-size: 30px;
+}
+
+.section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 10px 28px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 5px 0;
+    font-size: 28px;
+    letter-spacing: -.8px;
+}
+
+.section-heading>p:last-child {
+    color: #8985a5;
+    font-size: 13px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.game-card {
+    padding: 22px 19px;
+    border-radius: 22px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 15px 40px #302b600d;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px #302b601c;
+}
+
+.lilac {
+    background: linear-gradient(145deg, #f0ebff, #e4e0ff);
+}
+
+.pink {
+    background: linear-gradient(145deg, #fff0f1, #ffe2e8);
+}
+
+.blue {
+    background: linear-gradient(145deg, #eaf5ff, #dcecff);
+}
+
+.mint {
+    background: linear-gradient(145deg, #e9f9f1, #d9f2e7);
+}
+
+.game-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: #ffffffb5;
+    font-size: 24px;
+}
+
+.tag {
+    margin-top: 13px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #7c759f;
+}
+
+.game-card h3 {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.game-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #716d8c;
+    flex-grow: 1;
+}
+
+.letter-preview {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 17px;
+}
+
+.letter-preview span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 33px;
+    border-radius: 7px;
+    background: #ffffffa8;
+    font-weight: 900;
+}
+
+.letter-preview .green {
+    background: #7fa995;
+    color: white;
+}
+
+.letter-preview .yellow {
+    background: #d9b76a;
+    color: white;
+}
+
+.decoration {
+    font-size: 38px;
+    color: #b0a3df;
+    margin-bottom: 10px;
+}
+
+.decoration span {
+    font-size: 23px;
+    color: #d38cb4;
+}
+
+.scrambled {
+    font-size: 20px;
+    letter-spacing: 7px;
+    font-weight: 900;
+    color: #7385b5;
+    margin: 6px 0 22px;
+}
+
+.grid-preview {
+    font-family: monospace;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    font-weight: 900;
+    color: #689d86;
+    margin-bottom: 13px;
+}
+
+.game-button {
+    width: 100%;
+    border: 1px solid #ffffffd0;
+    border-radius: 11px;
+    padding: 11px;
+    background: #ffffffb8;
+    color: #35315f;
+    font-weight: 900;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.game-button:hover {
+    background: white;
+}
+
+.settings-stats {
+    max-width: 1180px;
+    padding: 25px 28px 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.panel {
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 10px 35px #302b6008;
+}
+
+.panel h2 {
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+.panel label {
+    display: block;
+    margin: 14px 0 7px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.panel select {
+    width: 100%;
+    border: 1px solid var(--borda);
+    background: var(--fundo);
+    color: var(--texto);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.hint {
+    font-size: 11px;
+    color: #9691b1;
+    margin-bottom: 0;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    text-align: center;
+}
+
+.stats div {
+    padding: 14px 5px;
+    border-radius: 14px;
+    background: #f8f6ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats span {
+    color: #a292dd;
+    font-size: 20px;
+}
+
+.stats strong {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.stats small {
+    font-size: 11px;
+    color: #8d88a8;
+}
+
+.reset-button {
+    border: 0;
+    background: transparent;
+    color: var(--roxo);
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.quote {
+    max-width: 1124px;
+    margin: 35px auto 0;
+    padding: 20px 25px;
+    border-radius: 18px;
+    background: linear-gradient(100deg, #f0ecff, #fff0f4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: #a798df;
+    font-size: 25px;
+}
+
+.quote p {
+    margin: 0;
+    color: #716b91;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 12px;
+    color: #9893b1;
+}
+
+/* Janela dos jogos */
+dialog {
+    width: min(92%, 480px);
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 1px solid var(--borda);
+    border-radius: 23px;
+    padding: 30px;
+    background: var(--cartao);
+    color: var(--texto);
+    box-shadow: 0 25px 80px #201b5350;
+}
+
+dialog::backdrop {
+    background: #25214d99;
+    backdrop-filter: blur(5px);
+}
+
+dialog h2 {
+    font-size: 29px;
+    margin: 8px 0;
+}
+
+dialog>p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.close {
+    float: right;
+    border: 0;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 23px;
+    background: #f0ecff;
+    color: #5e548f;
+    cursor: pointer;
+}
+
+.game-input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin: 12px 0;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--fundo);
+    color: var(--texto);
+    text-transform: uppercase;
+}
+
+.game-action {
+    padding: 12px 16px;
+    background: #302b60;
+    color: white;
+    border: 0;
+    border-radius: 11px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#mensagem {
+    color: var(--roxo);
+    font-weight: 900;
+    min-height: 24px;
+}
+
+.guess-grid {
+    display: grid;
+    gap: 5px;
+    margin: 18px 0;
+}
+
+.guess-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.guess-tile {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid var(--borda);
+    background: var(--fundo);
+    font-weight: 900;
+}
+
+.guess-tile.hit {
+    background: #7fa995;
+    color: white;
+}
+
+.guess-tile.near {
+    background: #d9b76a;
+    color: white;
+}
+
+.guess-tile.miss {
+    background: #85819a;
+    color: white;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 14px 0;
+}
+
+.chip {
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: #f3efff;
+    color: #655a9b;
+    padding: 10px 13px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.riddle-box {
+    padding: 18px;
+    border-radius: 15px;
+    background: #f3efff;
+    color: #5e548f;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.word-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    margin: 15px 0;
+}
+
+.word-grid button {
+    aspect-ratio: 1;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.word-grid button.selected {
+    background: #cfc3fa;
+    border-color: #8d7be0;
+}
+
+body.dark {
+    --fundo: #19182f;
+    --texto: #f0edff;
+    --roxo: #b4a5f0;
+    --cartao: #252341;
+    --borda: #3e3a5e;
+    background: radial-gradient(ellipse at 80% 5%, #353054, transparent 45%), var(--fundo);
+}
+
+body.dark .hero-text>p:not(.eyebrow),
+body.dark nav a {
+    color: #c8c3e1;
+}
+
+body.dark .stats div,
+body.dark .riddle-box,
+body.dark .chip {
+    background: #343052;
+    color: #f0edff;
+}
+
+body.dark .game-card p {
+    color: #5d5877;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: .6;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(-12deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 950px) {
+    .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quote {
+        margin-left: 28px;
+        margin-right: 28px;
+    }
+}
+
+@media (max-width: 620px) {
+    .topbar {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    nav {
+        gap: 12px;
+        font-size: 11px;
+    }
+
+    nav a:first-child {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 47px;
+    }
+
+    .sky-art {
+        min-height: 220px;
+    }
+
+    .moon {
+        font-size: 115px;
+    }
+
+    .section {
+        padding: 10px 17px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .game-grid {
+        gap: 11px;
+    }
+
+    .game-card {
+        padding: 14px 12px;
+        border-radius: 17px;
+    }
+
+    .game-card h3 {
+        font-size: 17px;
+    }
+
+    .game-card p {
+        font-size: 11px;
+    }
+
+    .tag {
+        font-size: 8px;
+        letter-spacing: .7px;
+    }
+
+    .game-button {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .settings-stats {
+        grid-template-columns: 1fr;
+        padding: 22px 17px 0;
+    }
+
+    .quote {
+        margin: 25px 17px 0;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .quote p {
+        font-size: 12px;
+    }
+}</style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo">☾ Céu de <span>Palavras</span></a>
+    <nav>
+      <a href="#jogos">Jogos</a>
+      <a href="#estatisticas">Estatísticas</a>
+    </nav>
+    <button id="tema" class="theme-button" aria-label="Alternar tema">☼</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">✧ SEU CANTINHO DE DESCOBERTAS ✧</p>
+        <h1>Uma palavra,<br><span>um universo.</span></h1>
+        <p>Escolha um jogo, descubra palavras e deixe sua curiosidade passear por este céu encantado.</p>
+        <a href="#jogos" class="main-button">Escolher um jogo ✦</a>
+      </div>
+
+      <div class="sky-art" aria-hidden="true">
+        <span class="star star1">✦</span>
+        <span class="star star2">✧</span>
+        <span class="star star3">⋆</span>
+        <span class="star star4">✦</span>
+        <div class="moon">☾</div>
+        <div class="cloud">☁</div>
+        <span class="planet">✧</span>
+      </div>
+    </section>
+
+    <section id="jogos" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">ESCOLHA SUA AVENTURA</p>
+        <h2>O que vamos jogar hoje?</h2>
+        <p>Quatro jeitos de brincar com palavras ♡</p>
+      </div>
+
+      <div class="game-grid">
+        <article class="game-card lilac">
+          <span class="game-icon">▦</span>
+          <span class="tag">LÓGICA</span>
+          <h3>Termo</h3>
+          <p>Adivinhe a palavra secreta usando as pistas das letras.</p>
+          <div class="letter-preview" aria-hidden="true">
+            <span class="green">S</span><span class="yellow">O</span><span> L </span>
+          </div>
+          <button class="game-button" data-game="termo">Jogar Termo →</button>
+        </article>
+
+        <article class="game-card pink">
+          <span class="game-icon">☁</span>
+          <span class="tag">CRIATIVIDADE</span>
+          <h3>Charadas</h3>
+          <p>Leia uma pista misteriosa e descubra a resposta escondida.</p>
+          <div class="decoration">☁ <span>?</span> ✧</div>
+          <button class="game-button" data-game="charadas">Resolver charada →</button>
+        </article>
+
+        <article class="game-card blue">
+          <span class="game-icon">↻</span>
+          <span class="tag">AGILIDADE</span>
+          <h3>Palavra Misteriosa</h3>
+          <p>As letras estão embaralhadas. Coloque-as na ordem certa!</p>
+          <div class="scrambled" aria-hidden="true">A R M O</div>
+          <button class="game-button" data-game="misteriosa">Desembaralhar →</button>
+        </article>
+
+        <article class="game-card mint">
+          <span class="game-icon">⌕</span>
+          <span class="tag">OBSERVAÇÃO</span>
+          <h3>Caça-palavras</h3>
+          <p>Encontre as palavras escondidas em uma grade cheia de letras.</p>
+          <div class="grid-preview" aria-hidden="true">
+            S O L A<br>U N U V<br>L U A E
+          </div>
+          <button class="game-button" data-game="caca">Encontrar palavras →</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="settings-stats">
+      <article class="panel">
+        <h2>✿ Personalize a aventura</h2>
+        <label for="dificuldade">Dificuldade</label>
+        <select id="dificuldade">
+          <option value="facil">☁ Fácil</option>
+          <option value="normal" selected>☾ Normal</option>
+          <option value="dificil">✦ Difícil</option>
+        </select>
+
+        <label for="categoria">Tema das palavras</label>
+        <select id="categoria">
+          <option value="variados">✧ Variados</option>
+          <option value="natureza">🌿 Natureza</option>
+          <option value="animais">🐈 Animais</option>
+          <option value="alimentos">🍓 Alimentos</option>
+          <option value="objetos">🪄 Objetos</option>
+        </select>
+        <p class="hint">Suas preferências ficam salvas neste navegador.</p>
+      </article>
+
+      <article class="panel" id="estatisticas">
+        <h2>☆ Suas conquistas</h2>
+        <div class="stats">
+          <div><span>☄</span><strong id="partidas">0</strong><small>Partidas</small></div>
+          <div><span>♡</span><strong id="vitorias">0</strong><small>Vitórias</small></div>
+          <div><span>✧</span><strong id="porcentagem">0%</strong><small>Acertos</small></div>
+        </div>
+        <button id="resetar" class="reset-button">Reiniciar estatísticas</button>
+      </article>
+    </section>
+
+    <aside class="quote">
+      ✦ <p>Às vezes, uma pequena palavra abre um céu inteiro.</p> ☾
+    </aside>
+  </main>
+
+  <footer>☾ Feito com carinho e estrelinhas ✧ ✦ ✧</footer>
+
+  <dialog id="modal">
+    <button id="fechar" class="close" aria-label="Fechar">×</button>
+    <p class="eyebrow">SUA AVENTURA COMEÇA AQUI</p>
+    <h2 id="titulo-jogo"></h2>
+    <p id="descricao-jogo"></p>
+    <div id="area-jogo"></div>
+    <p id="mensagem" aria-live="polite"></p>
+  </dialog>
+</body>
+</html>
